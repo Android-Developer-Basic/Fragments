@@ -1,4 +1,4 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.first
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.addCallback
+import otus.gpb.homework.fragments.ColorGenerator
+import otus.gpb.homework.fragments.R
 
 class FragmentA : Fragment(R.layout.fragment_a) {
 

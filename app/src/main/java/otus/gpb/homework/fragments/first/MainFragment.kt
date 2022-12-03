@@ -1,4 +1,4 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.first
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import otus.gpb.homework.fragments.R
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 

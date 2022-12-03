@@ -1,9 +1,10 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.first
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.FrameLayout
+import otus.gpb.homework.fragments.R
 
 private const val KEY = "COLOR"
 

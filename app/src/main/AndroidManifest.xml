@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Fragments"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".first.FirstTaskActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".second.SecondTaskActivity"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>
