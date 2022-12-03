@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="go_to_fragmenta">Go to FragmentA</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="go_to_fragmentaa">Go to FragmentAA</string>
+    <string name="go_to_fragmentab">Go to FragmentAB</string>
 </resources>
