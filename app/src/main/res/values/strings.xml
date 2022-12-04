@@ -6,4 +6,6 @@
     <string name="go_to_fragmentab">Go to FragmentAB</string>
     <string name="_1">Задание #1</string>
     <string name="_2">Задание #2</string>
+    <string name="send_color">Send Color</string>
+    <string name="open_fragmentbb">Open FragmentBB</string>
 </resources>

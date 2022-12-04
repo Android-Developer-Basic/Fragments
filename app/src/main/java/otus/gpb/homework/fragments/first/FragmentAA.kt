@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
-import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 
@@ -16,7 +16,7 @@ class FragmentAA : Fragment(R.layout.fragment_a_a) {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            view.rootView.findViewById<FrameLayout>(R.id.child_fragment_container)
+            view.findViewById<ConstraintLayout>(R.id.aa_fragment)
                 .setBackgroundColor(it.getInt(KEY))
         }
 
@@ -31,7 +31,6 @@ class FragmentAA : Fragment(R.layout.fragment_a_a) {
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance(color: Int) =
             FragmentAA().apply {
