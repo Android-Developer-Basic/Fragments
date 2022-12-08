@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.fragment.app.setFragmentResultListener
 import otus.gpb.homework.fragments.R
 
 class FragmentBA : Fragment(R.layout.fragment_b_a) {
@@ -14,10 +15,7 @@ class FragmentBA : Fragment(R.layout.fragment_b_a) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().supportFragmentManager.setFragmentResultListener(
-            "KEY",
-            viewLifecycleOwner
-        ) { _, bundle ->
+        setFragmentResultListener("KEY") { _, bundle ->
             val color = bundle.getInt("color")
             view.findViewById<ConstraintLayout>(R.id.first_fragment).setBackgroundColor(color)
         }
