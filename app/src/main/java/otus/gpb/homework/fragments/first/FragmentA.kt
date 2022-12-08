@@ -1,10 +1,8 @@
 package otus.gpb.homework.fragments.first
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.addCallback
 import otus.gpb.homework.fragments.ColorGenerator
@@ -24,13 +22,7 @@ class FragmentA : Fragment(R.layout.fragment_a) {
                 .addToBackStack(null)
                 .commit()
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
         requireActivity().onBackPressedDispatcher.addCallback {
             val count = childFragmentManager.backStackEntryCount
 
@@ -39,6 +31,5 @@ class FragmentA : Fragment(R.layout.fragment_a) {
             else
                 requireActivity().finish()
         }
-        return super.onCreateView(inflater, container, savedInstanceState)
     }
 }
