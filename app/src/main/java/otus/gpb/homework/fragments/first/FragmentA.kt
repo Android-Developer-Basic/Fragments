@@ -17,17 +17,17 @@ class FragmentA : Fragment(R.layout.fragment_a) {
 
             val color = ColorGenerator.generateColor()
 
-            childFragmentManager.beginTransaction()
-                .replace(R.id.child_fragment_container, FragmentAA.newInstance(color))
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentAA.newInstance(color))
                 .addToBackStack(null)
                 .commit()
         }
 
         requireActivity().onBackPressedDispatcher.addCallback {
-            val count = childFragmentManager.backStackEntryCount
+            val count = parentFragmentManager.backStackEntryCount
 
             if (count > 1)
-                childFragmentManager.popBackStack()
+                parentFragmentManager.popBackStack()
             else
                 requireActivity().finish()
         }

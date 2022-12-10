@@ -9,7 +9,7 @@
     tools:context=".first.FragmentA">
 
     <FrameLayout
-        android:id="@+id/child_fragment_container"
+        android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/go_to_fragment_AB"
