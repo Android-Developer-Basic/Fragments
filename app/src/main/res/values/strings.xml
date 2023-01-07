@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="open_fragment_a">Открыть FragmentA</string>
+    <string name="open_fragment_aa">Открыть FragmentAA</string>
+    <string name="open_fragment_ab">Открыть FragmentAB</string>
+    <string name="open_fragment_main">Открыть FragmentMain</string>
 </resources>
