@@ -13,28 +13,7 @@
         android:theme="@style/Theme.Fragments"
         tools:targetApi="31">
         <activity
-            android:name=".FragmentAB"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".FragmentAA"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".FragmentA"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainFragment"
+            android:name=".SecondTaskActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FirstTaskActivity"
+            android:exported="true" />
     </application>
-
 </manifest>

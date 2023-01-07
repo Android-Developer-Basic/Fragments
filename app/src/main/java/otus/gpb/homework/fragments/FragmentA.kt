@@ -28,7 +28,6 @@ class FragmentA : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-
     val host = requireActivity()
     val callback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {

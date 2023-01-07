@@ -4,4 +4,8 @@
     <string name="open_fragment_aa">Открыть FragmentAA</string>
     <string name="open_fragment_ab">Открыть FragmentAB</string>
     <string name="open_fragment_main">Открыть FragmentMain</string>
+    <string name="open_task_1">Открыть Task 1</string>
+    <string name="open_task_2">Открыть Task 2</string>
+    <string name="send_color">Передать цвет</string>
+    <string name="open_fragment_bb">Открыть FragmentBB</string>
 </resources>

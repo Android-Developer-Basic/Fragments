@@ -18,7 +18,6 @@ class FragmentAB : Fragment(R.layout.fragment_ab) {
     }
 
     companion object {
-
         @JvmStatic
         fun newInst(color: Int) =
             FragmentAB().apply {

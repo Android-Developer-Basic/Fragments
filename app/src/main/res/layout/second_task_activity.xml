@@ -4,5 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentAB">
+    tools:context=".SecondTaskActivity">
+
+    <FrameLayout
+        android:id="@+id/first_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_ba" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
