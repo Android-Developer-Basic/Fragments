@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="task1">Task #1</string>
+    <string name="task2">Task # 2</string>
+    <string name="open_fragment_a">Open fragment A</string>
+    <string name="open_fragment_ab">OPEN AB</string>
+</resources>
