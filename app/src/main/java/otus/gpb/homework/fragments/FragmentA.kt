@@ -3,17 +3,18 @@ package otus.gpb.homework.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Button
 import androidx.activity.addCallback
-import otus.gpb.homework.fragments.ColorGenerator
-import otus.gpb.homework.fragments.R
+import otus.gpb.homework.fragments.databinding.FragmentABinding
+
 
 class FragmentA : Fragment(R.layout.fragment_a) {
+    private var fragmentABinding: FragmentABinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<Button>(R.id.open_fragment_aa).setOnClickListener {
+        val binding = FragmentABinding.bind(view)
+        fragmentABinding = binding
+        binding.openFragmentAa.setOnClickListener {
 
             val color = ColorGenerator.generateColor()
 
@@ -31,5 +32,10 @@ class FragmentA : Fragment(R.layout.fragment_a) {
             else
                 requireActivity().finish()
         }
+    }
+
+    override fun onDestroyView() {
+        fragmentABinding = null
+        super.onDestroyView()
     }
 }

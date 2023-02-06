@@ -4,22 +4,26 @@ package otus.gpb.homework.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Button
-import androidx.constraintlayout.widget.ConstraintLayout
+import otus.gpb.homework.fragments.databinding.FragmentAaBinding
 
-private const val KEY = "COLOR"
+private const val COLOR = "COLOR"
 
 class FragmentAA : Fragment(R.layout.fragment_aa) {
 
+    private var fragmentAaBinding: FragmentAaBinding? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentAaBinding.bind(view)
+        fragmentAaBinding = binding
 
         arguments?.let {
-            view.findViewById<ConstraintLayout>(R.id.fragment_aa)
-                .setBackgroundColor(it.getInt(KEY))
+            binding.fragmentAa
+                .setBackgroundColor(it.getInt(COLOR))
         }
 
-        view.findViewById<Button>(R.id.open_fragment_ab).setOnClickListener {
+        binding.openFragmentAb.setOnClickListener {
+
             val color = ColorGenerator.generateColor()
 
             parentFragmentManager.beginTransaction()
@@ -27,6 +31,12 @@ class FragmentAA : Fragment(R.layout.fragment_aa) {
                 .addToBackStack(null)
                 .commit()
         }
+
+    }
+
+    override fun onDestroyView() {
+        fragmentAaBinding = null
+        super.onDestroyView()
     }
 
     companion object {
@@ -34,7 +44,7 @@ class FragmentAA : Fragment(R.layout.fragment_aa) {
         fun newInstance(color: Int) =
             FragmentAA().apply {
                 arguments = Bundle().apply {
-                    putInt(KEY, color)
+                    putInt(COLOR, color)
                 }
             }
     }

@@ -3,19 +3,29 @@ package otus.gpb.homework.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
+import otus.gpb.homework.fragments.databinding.FragmentAbBinding
 
 
-private const val KEY = "COLOR"
+private const val COLOR = "COLOR"
 
 class FragmentAB : Fragment(R.layout.fragment_ab) {
 
+    private var fragmentAbBinding: FragmentAbBinding? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentAbBinding.bind(view)
+        fragmentAbBinding = binding
+
         arguments?.let {
-            view.findViewById<ConstraintLayout>(R.id.ab_fragment)
-                .setBackgroundColor(it.getInt(KEY))
+            binding.abFragment
+                .setBackgroundColor(it.getInt(COLOR))
         }
+    }
+
+    override fun onDestroyView() {
+        fragmentAbBinding = null
+        super.onDestroyView()
     }
 
     companion object {
@@ -23,7 +33,7 @@ class FragmentAB : Fragment(R.layout.fragment_ab) {
         fun newInstance(color: Int) =
             FragmentAB().apply {
                 arguments = Bundle().apply {
-                    putInt(KEY, color)
+                    putInt(COLOR, color)
                 }
             }
     }
