@@ -19,7 +19,7 @@ class FragmentBA : Fragment(R.layout.fragment_ba) {
         val binding = FragmentBaBinding.bind(view)
         fragmentBaBinding = binding
 
-        setFragmentResultListener("KEY") { _, bundle ->
+        setFragmentResultListener("COLOR") { _, bundle ->
             val color = bundle.getInt("color")
             binding.firstFragment.setBackgroundColor(color)
 

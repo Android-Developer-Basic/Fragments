@@ -27,7 +27,7 @@ class FragmentAA : Fragment(R.layout.fragment_aa) {
             val color = ColorGenerator.generateColor()
 
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_aa_container, FragmentAB.newInstance(color))
+                .replace(R.id.fragment_container, FragmentAB.newInstance(color))
                 .addToBackStack(null)
                 .commit()
         }
