@@ -20,7 +20,7 @@ class FragmentBA : Fragment(R.layout.fragment_ba) {
 
             parentFragmentManager.commit {
                 replace<FragmentBB>(R.id.container_one)
-                addToBackStack(null)
+
             }
         }
 

@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".first.FragmentA">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fragment a"
-        android:layout_above="@id/btn_open_fr_aa"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp">
 
-    </TextView>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@id/btn_open_fr_aa"
+         android:layout_centerHorizontal="true"
+         android:text="fragment a"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent">
+     </TextView>
 
     <Button
         android:id="@+id/btn_open_fr_aa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open Fragment AA"
-        android:layout_centerInParent="true"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--<FrameLayout
+           android:id="@+id/child_fragment"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           />-->

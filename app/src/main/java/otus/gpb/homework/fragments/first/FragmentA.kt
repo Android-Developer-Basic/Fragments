@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 
 class FragmentA : Fragment() {
@@ -20,9 +21,9 @@ class FragmentA : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.btn_open_fr_aa).setOnClickListener {
-            val fragmentAA = FragmentAA()
+            val color = ColorGenerator.generateColor()
             parentFragmentManager.beginTransaction()
-                .replace(R.id.container, fragmentAA, "fragment_aa")
+                .replace(R.id.container, FragmentAA.newInstance(color), "fragment_aa")
                 .addToBackStack(null)
                 .commit()
         }

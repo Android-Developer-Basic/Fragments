@@ -14,12 +14,12 @@ class SecondTaskActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             replace<FragmentBA>(R.id.container_one)
-            addToBackStack(null)
+
     }
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             supportFragmentManager.commit {
                 replace<FragmentBB>(R.id.container_two)
-                addToBackStack(null)
+
             }
         }
     }
