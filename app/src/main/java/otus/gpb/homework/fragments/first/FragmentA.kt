@@ -23,7 +23,7 @@ class FragmentA : Fragment() {
         view.findViewById<Button>(R.id.btn_open_fr_aa).setOnClickListener {
             val color = ColorGenerator.generateColor()
             parentFragmentManager.beginTransaction()
-                .replace(R.id.container, FragmentAA.newInstance(color), "fragment_aa")
+                .replace(R.id.container, FragmentAA.newInstance(color))
                 .addToBackStack(null)
                 .commit()
         }
@@ -31,17 +31,16 @@ class FragmentA : Fragment() {
         val callback: OnBackPressedCallback = object : OnBackPressedCallback( true) {
             override fun handleOnBackPressed() {
                 val count = parentFragmentManager.backStackEntryCount
+                val countChild = childFragmentManager.backStackEntryCount
                 if (count > 1)
                     parentFragmentManager.popBackStack()
+                if (countChild > 1)
+                    childFragmentManager.popBackStack()
                 else
                     requireActivity().finish()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
-
-
-
-
 
 }

@@ -13,12 +13,10 @@ class FirstTaskActivity : AppCompatActivity() {
         setContentView(R.layout.activity_first_task)
 
         supportFragmentManager.commit {
-
             replace<MainFragment>(R.id.container)
-
         }
-
     }
+
 }
 
 

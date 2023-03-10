@@ -1,12 +1,14 @@
 package otus.gpb.homework.fragments.first
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 
@@ -24,14 +26,15 @@ class FragmentAA : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            view.rootView.findViewById<FrameLayout>(R.id.container)
+            view.findViewById<ConstraintLayout>(R.id.fragmentAA)
                 .setBackgroundColor(it.getInt(value))
         }
         view.findViewById<Button>(R.id.b_open_fr_ab).setOnClickListener {
             val color = ColorGenerator.generateColor()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.container, FragmentAB.newInstance(color), "fragment_ab")
+            childFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
                 .addToBackStack(null)
+                .replace(R.id.childFragment, FragmentAB.newInstance(color))
                 .commit()
         }
     }
@@ -42,6 +45,13 @@ class FragmentAA : Fragment() {
             arguments = Bundle().apply {
                 putInt(value, color)
             }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        parentFragmentManager.commit {
+            setPrimaryNavigationFragment(this@FragmentAA)
         }
     }
 
