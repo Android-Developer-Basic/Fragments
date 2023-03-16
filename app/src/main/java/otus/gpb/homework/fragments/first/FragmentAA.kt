@@ -1,6 +1,5 @@
 package otus.gpb.homework.fragments.first
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 
@@ -31,11 +29,12 @@ class FragmentAA : Fragment() {
         }
         view.findViewById<Button>(R.id.b_open_fr_ab).setOnClickListener {
             val color = ColorGenerator.generateColor()
-            childFragmentManager.beginTransaction()
-                .setReorderingAllowed(true)
-                .addToBackStack(null)
-                .replace(R.id.childFragment, FragmentAB.newInstance(color))
-                .commit()
+            parentFragment?.childFragmentManager
+                ?.beginTransaction()
+                ?.setReorderingAllowed(true)
+                ?.addToBackStack(null)
+                ?.replace(R.id.childFragmentContainer, FragmentAB.newInstance(color))
+                ?.commit()
         }
     }
 
@@ -45,13 +44,6 @@ class FragmentAA : Fragment() {
             arguments = Bundle().apply {
                 putInt(value, color)
             }
-        }
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        parentFragmentManager.commit {
-            setPrimaryNavigationFragment(this@FragmentAA)
         }
     }
 

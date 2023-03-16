@@ -1,5 +1,6 @@
 package otus.gpb.homework.fragments.first
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 
@@ -22,25 +24,32 @@ class FragmentA : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.btn_open_fr_aa).setOnClickListener {
             val color = ColorGenerator.generateColor()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.container, FragmentAA.newInstance(color))
+            childFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.childFragmentContainer, FragmentAA.newInstance(color))
                 .addToBackStack(null)
                 .commit()
         }
 
-        val callback: OnBackPressedCallback = object : OnBackPressedCallback( true) {
+        val callback = object : OnBackPressedCallback( true) {
             override fun handleOnBackPressed() {
-                val count = parentFragmentManager.backStackEntryCount
-                val countChild = childFragmentManager.backStackEntryCount
-                if (count > 1)
-                    parentFragmentManager.popBackStack()
-                if (countChild > 1)
+                if (childFragmentManager.backStackEntryCount > 1) {
                     childFragmentManager.popBackStack()
-                else
-                    requireActivity().finish()
+                }else{
+                    isEnabled = false
+                    activity?.onBackPressed()
+                }
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        parentFragmentManager.commit {
+            setPrimaryNavigationFragment(this@FragmentA)
+        }
+    }
+
 }
+
