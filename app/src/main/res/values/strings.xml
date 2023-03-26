@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="open_task_a">Open Task A</string>
+    <string name="open_task_b">Open Task B</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity_a">Это Activity A</string>
+    <string name="open_fragment_a">Open Fragment A</string>
+    <string name="open_fragment_aa">Open Fragment AA</string>
+    <string name="this_is_fragment_a">Это фрагмент А</string>
+    <string name="open_fragment_ab">Open Fragment AB</string>
+    <string name="this_is_fragment_aa">Это фрагмент AА</string>
+    <string name="this_is_fragment_ab">Это фрагмент АВ</string>
+    <string name="this_fragment_ba">Это Fragment BA</string>
+    <string name="open_fragment_bb">Open Fragment BB</string>
+    <string name="send_color">Send Color</string>
+    <string name="this_fragment_bb">Это Fragment BB</string>
+
+
 </resources>
