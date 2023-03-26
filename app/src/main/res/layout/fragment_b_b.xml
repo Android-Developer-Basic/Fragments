@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".taskB.FragmentBB">
 
     <Button
-        android:id="@+id/open_task_a"
+        android:id="@+id/send_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_task_a"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/open_task_b"
+        android:text="@string/send_color"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
-        android:id="@+id/open_task_b"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_task_b"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/open_task_a"
-        app:layout_constraintTop_toBottomOf="@+id/open_task_a" />
-
+        android:text="@string/this_fragment_bb"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/send_color"
+        app:layout_constraintEnd_toEndOf="@+id/send_color"
+        app:layout_constraintStart_toStartOf="@+id/send_color"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".taskB.FragmentBA">
 
-
-    <Button
-        android:id="@+id/open_task_a"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_task_a"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/open_task_b"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/this_fragment_ba"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/open_fragment_bb"
+        app:layout_constraintEnd_toEndOf="@+id/open_fragment_bb"
+        app:layout_constraintStart_toStartOf="@+id/open_fragment_bb"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/open_task_b"
+        android:id="@+id/open_fragment_bb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_task_b"
-        android:textAllCaps="false"
+        android:text="@string/open_fragment_bb"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/open_task_a"
-        app:layout_constraintTop_toBottomOf="@+id/open_task_a" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
