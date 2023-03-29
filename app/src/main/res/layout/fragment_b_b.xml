@@ -3,21 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".FragmentBB">
 
     <Button
-        android:id="@+id/open_fragment_a_b"
+        android:id="@+id/get_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open fragment ab"
-        android:layout_marginTop="150dp"
+        android:text="get and send color"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="i am AA"
-        android:layout_marginTop="190dp"
+        android:layout_height="match_parent"
+        android:text="i am BB"
+        android:textSize="26dp"
+        android:layout_marginTop="150dp"
         android:gravity="center_horizontal"/>
 
 </FrameLayout>

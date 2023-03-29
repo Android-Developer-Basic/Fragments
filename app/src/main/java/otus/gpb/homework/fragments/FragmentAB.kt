@@ -8,24 +8,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 
-class FragmentAB : Fragment() {
+class FragmentAB : Fragment(R.layout.fragment_a_b) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    val background = arguments?.getInt(ARG_VALUE)
-    if (background != null) {
-        view.setBackgroundColor(background)
+        val background = arguments?.getInt(ARG_VALUE)
+        if (background != null) {
+            view.setBackgroundColor(background)
+        }
     }
-}
-companion object {
-    private const val ARG_VALUE = "backcolor"
-    fun create(value: Int): FragmentAB {
-        val fragment = FragmentAB()
-        val arguments = Bundle()
-        arguments.putInt(ARG_VALUE, value)
-        fragment.arguments = arguments
-        return fragment
+
+    companion object {
+        private const val ARG_VALUE = "backcolor"
+        fun create(value: Int): FragmentAB {
+            val fragment = FragmentAB()
+            val arguments = Bundle()
+            arguments.putInt(ARG_VALUE, value)
+            fragment.arguments = arguments
+            return fragment
+        }
     }
-}
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

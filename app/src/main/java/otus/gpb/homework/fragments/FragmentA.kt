@@ -22,7 +22,6 @@ class FragmentA : Fragment(R.layout.fragment_a) {
                 .commit()
         }
     }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
 

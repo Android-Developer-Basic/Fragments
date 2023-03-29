@@ -18,6 +18,7 @@ class FragmentAA : Fragment(R.layout.fragment_a_a) {
                 ?.addToBackStack(null)
                 ?.commit()
         }
+
         val background = arguments?.getInt(ARG_VALUE)
         if (background != null) {
             view.setBackgroundColor(background)
