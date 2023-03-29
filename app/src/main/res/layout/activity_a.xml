@@ -5,22 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context=".MainActivity">
-
-
-    <Button
-        android:id="@+id/open_activity_a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="open activity A"/>
+    android:gravity="center"
+    tools:context=".ActivityA">
 
     <Button
-        android:id="@+id/open_activity_b"
+        android:id="@+id/open_fragment_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open activity B"
-        android:layout_marginTop="500dp"/>
+        android:text="open fragment a"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_a_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_a" />
+
+
+
+
 
 
 </LinearLayout>
