@@ -16,20 +16,14 @@ class FragmentBA : Fragment(R.layout.fragment_ba) {
         super.onViewCreated(view, savedInstanceState)
         view.setBackgroundColor(ColorGenerator.generateColor())
 
-        if (activity?.findViewById<FragmentContainerView>(R.id.fragment_BA) != null) {
-            view.findViewById<Button>(R.id.button_open_frgBB).isVisible = false
-        }
+        view.findViewById<Button>(R.id.button_open_frgBB)?.setOnClickListener {
 
-        if (activity?.findViewById<FrameLayout>(R.id.fragment_container) != null) {
-            view.findViewById<Button>(R.id.button_open_frgBB).setOnClickListener {
-
-                val key = "FragmentBB"
-                parentFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, FragmentBB(), key)
-                    .addToBackStack(key)
-                    .commit()
-            }
+            val key = "FragmentBB"
+            parentFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, FragmentBB(), key)
+                .addToBackStack(key)
+                .commit()
         }
 
     }
