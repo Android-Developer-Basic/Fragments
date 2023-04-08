@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentAB">
+    tools:context=".FragmentBA">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentab_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:translationZ="10dp"
+    <Button
+        android:id="@+id/fragmentba_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open FragmentBB"
+        android:layout_gravity="center"
         />
 
 </FrameLayout>

@@ -32,6 +32,9 @@ class FragmentAB : Fragment() {
         color?.let {
             view.setBackgroundColor(it)
         }
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragmentab_container, FragmentBA.newInstance())
+            .commit()
     }
 
     companion object {
