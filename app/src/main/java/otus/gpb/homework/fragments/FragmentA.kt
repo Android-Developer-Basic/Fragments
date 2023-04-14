@@ -13,17 +13,16 @@ import androidx.lifecycle.LifecycleOwner
 import otus.gpb.homework.fragments.databinding.FragmentLayoutBinding
 
 class FragmentA:Fragment() {
-    private val fragmentDataModel:FragmentsDataVM by activityViewModels()
-    private lateinit var binding:FragmentLayoutBinding
-    companion object{
-        fun newInstance() = FragmentA()
-    }
+    private val fragmentDataModel: FragmentsDataVM by activityViewModels()
+    private lateinit var binding: FragmentLayoutBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLayoutBinding.inflate(inflater)
         return binding.root
     }
@@ -31,17 +30,37 @@ class FragmentA:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentDataModel.data.observe(activity as LifecycleOwner) {
-            if (it == SWIPED) {
-                Handler(Looper.getMainLooper()).postDelayed({
-                    binding.fragmentALayout.setBackgroundColor(ColorGenerator.generateColor())
+            when (it) {
+                SWIPED -> binding.root.apply {
+                    left = width
+                    setBackgroundColor(ColorGenerator.generateColor())
+                    val looper:Looper = Looper.myLooper()!!
+                    Handler(looper).postDelayed({
+                        SwipeView(
+                            this,
+                            1000,
+                            AccelerateInterpolator()
+                        ).unWrap(width, 0)
+                    },1)
+                }
+
+                BACK_CLICKED -> binding.fragmentALayout.apply {
+
                     SwipeView(
-                        binding.fragmentALayout,
+                        this,
                         1000,
                         AccelerateInterpolator()
-                    ).unWrap()
-                }, 1)
-            }
+                    ).unWrap(this.left, this.width)
+                    this@FragmentA.onDestroyView()
+                    fragmentDataModel.data.value = FIRST_FRAGMENT_CLOSING
 
+                }
+
+            }
         }
+
+
     }
+
+
 }

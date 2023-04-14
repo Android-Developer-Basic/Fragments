@@ -8,9 +8,9 @@ class SwipeView(private val view:View?,
                     private val animatorDuration: Long,
                     private val animationInterpolator: TimeInterpolator,
 ){
-    fun swipe(){
+    fun swipe(start:Float, finish:Float){
         view?.let { v ->
-            ValueAnimator.ofFloat(v.x, -1*v.width.toFloat())
+            ValueAnimator.ofFloat(start, finish)
                 .apply {
                 duration = animatorDuration
                 interpolator = animationInterpolator
@@ -26,9 +26,9 @@ class SwipeView(private val view:View?,
         }
     }
 
-    fun unWrap(){
+    fun unWrap(start: Int, finish:Int){
         view?.let { v ->
-            ValueAnimator.ofInt(v.width, 0).apply {
+            ValueAnimator.ofInt(start, finish).apply {
                 duration = animatorDuration
                 interpolator = animationInterpolator
                 addUpdateListener {
