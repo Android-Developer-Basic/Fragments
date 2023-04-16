@@ -1,5 +1,6 @@
 package otus.gpb.homework.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,14 +8,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
-import otus.gpb.homework.fragments.databinding.FragmentLayoutBinding
+import otus.gpb.homework.fragments.databinding.FragmentActivityBinding
 
 class FragmentA:Fragment() {
     private val fragmentDataModel: FragmentsDataVM by activityViewModels()
-    private lateinit var binding: FragmentLayoutBinding
+    private lateinit var binding: FragmentActivityBinding
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val onBackClick = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                if(childFragmentManager.backStackEntryCount > 0){
+                    childFragmentManager.popBackStack()
+
+                }
+                else{
+                    isEnabled = false
+                    activity?.onBackPressed()
+                }
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, onBackClick)
+    }
 
 
 
@@ -23,7 +42,8 @@ class FragmentA:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLayoutBinding.inflate(inflater)
+        binding = FragmentActivityBinding.inflate(inflater)
+        changeText()
         return binding.root
     }
 
@@ -38,29 +58,33 @@ class FragmentA:Fragment() {
                     Handler(looper).postDelayed({
                         SwipeView(
                             this,
-                            1000,
+                            500,
                             AccelerateInterpolator()
                         ).unWrap(width, 0)
                     },1)
                 }
 
-                BACK_CLICKED -> binding.fragmentALayout.apply {
 
-                    SwipeView(
-                        this,
-                        1000,
-                        AccelerateInterpolator()
-                    ).unWrap(this.left, this.width)
-                    this@FragmentA.onDestroyView()
-                    fragmentDataModel.data.value = FIRST_FRAGMENT_CLOSING
-
+                OPEN_FRAGMENT_AB ->{
+                    childFragmentManager
+                        .beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.fragmentLayout, FragmentAB())
+                        .commit()
                 }
 
             }
         }
-
-
+        binding.fragmentButton.setOnClickListener {
+            childFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.fragmentLayout, FragmentAA())
+                .commit()
+        }
     }
 
-
+    private fun changeText(){
+        TextChanger(binding.fragmentText, binding.fragmentButton, resources.getString(R.string.fragmentA), resources.getString(R.string.fragmentAA))
+    }
 }

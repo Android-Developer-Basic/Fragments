@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Fragments</string>
-    <string name="openA"> Open Fragment A</string>
-    <string name="openAA"> Open Fragment AA</string>
-    <string name="openAB"> Open Fragment AB</string>
+    <string name="fragmentA">Fragment A</string>
+    <string name="fragmentAA">Fragment AA</string>
+    <string name="fragmentAB">Fragment AB</string>
+    <string name="openA">Open Fragment A</string>
 </resources>

@@ -8,5 +8,4 @@ class FragmentsDataVM: ViewModel() {
         MutableLiveData<Any>()
     }
 
-
 }
