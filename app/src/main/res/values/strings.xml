@@ -4,4 +4,8 @@
     <string name="fragmentAA">Fragment AA</string>
     <string name="fragmentAB">Fragment AB</string>
     <string name="openA">Open Fragment A</string>
+    <string name="fragmentBA">Fragment BA</string>
+    <string name="fragmentBB">Fragment BB</string>
+    <string name="openBA">Open Fragment BA</string>
+    <string name="sendColor">Send color</string>
 </resources>

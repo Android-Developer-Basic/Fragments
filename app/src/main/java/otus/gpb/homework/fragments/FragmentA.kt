@@ -14,9 +14,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
 import otus.gpb.homework.fragments.databinding.FragmentActivityBinding
 
-class FragmentA:Fragment() {
+class FragmentA(private val context: Context):Fragment() {
     private val fragmentDataModel: FragmentsDataVM by activityViewModels()
     private lateinit var binding: FragmentActivityBinding
+    private val color = ColorGenerator.generateColor()
+    private val fragmentName = context.resources.getString(R.string.fragmentA)
+    private val nextFragmentName = context.resources.getString(R.string.fragmentAA)
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -51,9 +54,9 @@ class FragmentA:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fragmentDataModel.data.observe(activity as LifecycleOwner) {
             when (it) {
-                SWIPED -> binding.root.apply {
+                SWIPE -> binding.root.apply {
                     left = width
-                    setBackgroundColor(ColorGenerator.generateColor())
+                    setBackgroundColor(color)
                     val looper:Looper = Looper.myLooper()!!
                     Handler(looper).postDelayed({
                         SwipeView(
@@ -69,7 +72,7 @@ class FragmentA:Fragment() {
                     childFragmentManager
                         .beginTransaction()
                         .addToBackStack(null)
-                        .replace(R.id.fragmentLayout, FragmentAB())
+                        .replace(R.id.fragmentLayout, FragmentAB(context))
                         .commit()
                 }
 
@@ -79,12 +82,12 @@ class FragmentA:Fragment() {
             childFragmentManager
                 .beginTransaction()
                 .addToBackStack(null)
-                .replace(R.id.fragmentLayout, FragmentAA())
+                .replace(R.id.fragmentLayout, FragmentAA(context))
                 .commit()
         }
     }
 
     private fun changeText(){
-        TextChanger(binding.fragmentText, binding.fragmentButton, resources.getString(R.string.fragmentA), resources.getString(R.string.fragmentAA))
+        TextChanger(binding.fragmentText, binding.fragmentButton, fragmentName, nextFragmentName)
     }
 }
