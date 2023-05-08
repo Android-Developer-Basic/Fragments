@@ -1,4 +1,4 @@
-package otus.gpb.homework.fragments
+package otus.prokofev.homework.fragments
 
 import org.junit.Test
 
