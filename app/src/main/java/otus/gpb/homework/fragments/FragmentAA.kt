@@ -14,7 +14,7 @@ class FragmentAA : Fragment(R.layout.fragment_aa) {
         view.findViewById<AppCompatButton>(R.id.button_open_fragment_ab)?.setOnClickListener {
             childFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_frame_a, FragmentAB())
+                .replace(R.id.fragment_frame_aa, FragmentAB())
                 .addToBackStack(null)
                 .commit()
             Log.d("app", "fragment_aa")
