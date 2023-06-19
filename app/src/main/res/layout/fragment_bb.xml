@@ -2,14 +2,14 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_frame_aa"
+    android:id="@+id/fragment_bb_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/ThemeOverlay.Fragments.FullscreenContainer"
-    tools:context=".usecaseA.FragmentAA">
+    tools:context=".usecaseB.FragmentBB">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_open_fragment_ab"
+        android:id="@+id/button_send_color"
         style="?android:attr/segmentedButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,6 +17,6 @@
         android:layout_marginRight="40dp"
         android:layout_gravity="center"
         android:textSize="20sp"
-        android:text="@string/button_text_fragment_ab" />
+        android:text="@string/button_text_send_color" />
 
 </FrameLayout>

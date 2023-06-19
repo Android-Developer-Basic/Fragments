@@ -1,34 +1,23 @@
 package otus.gpb.homework.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import otus.gpb.homework.fragments.usecaseA.ActivityA
+import otus.gpb.homework.fragments.usecaseB.ActivityB
 
 class MainActivity : AppCompatActivity() {
-
-    lateinit var fragmentA: FragmentA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragmentA = FragmentA()
+        findViewById<AppCompatButton>(R.id.button_open_activity_a)?.setOnClickListener {
+            startActivity(Intent(this, ActivityA::class.java))
+        }
 
-        if(savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.activity_main_frame, fragmentA)
-                .commit()
-            Log.d("app", "main_activity")
+        findViewById<AppCompatButton>(R.id.button_open_activity_b)?.setOnClickListener {
+            startActivity(Intent(this, ActivityB::class.java))
         }
     }
-
-    /*override fun onBackPressed() {
-        if (fragmentA.childFragmentManager.backStackEntryCount > 0) {
-            fragmentA.childFragmentManager.popBackStack()
-        }
-        else {
-            super.onBackPressed()
-        }
-    }*/
 }

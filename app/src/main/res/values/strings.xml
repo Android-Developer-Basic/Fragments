@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="button_text_activity_a">Activity \u220b Fragment A</string>
+    <string name="button_text_activity_b">Activity \u220b Fragment BA</string>
     <string name="button_text_fragment_aa">Open Fragment AA</string>
     <string name="button_text_fragment_ab">Open Fragment AB</string>
     <string name="button_text_fragment_ba">Open Fragment BA</string>
+    <string name="button_text_fragment_bb">Open Fragment BB</string>
+    <string name="button_text_send_color">Send Color</string>
     <string name="text_fragment_ab">Fragment AB</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

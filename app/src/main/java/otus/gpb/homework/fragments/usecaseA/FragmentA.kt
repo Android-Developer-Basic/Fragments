@@ -1,4 +1,4 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.usecaseA
 
 import android.content.Context
 import android.os.Bundle
@@ -7,19 +7,20 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.ColorGenerator
+import otus.gpb.homework.fragments.R
 
 class FragmentA : Fragment(R.layout.fragment_a) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<AppCompatButton>(R.id.button_open_fragment_aa)?.setOnClickListener {
             childFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_frame_a, FragmentAA())
+                .replace(R.id.fragment_frame_a, FragmentAA(ColorGenerator.generateColor()))
                 .addToBackStack(null)
                 .commit()
-            Log.d("app", "fragment_a")
+            Log.d("app", "clicked button to open fragment_aa")
         }
     }
 
