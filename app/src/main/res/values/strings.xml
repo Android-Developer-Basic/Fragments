@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="open_fragment_a_button">FragmentA</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_fragment_aa_button">FragmentAA</string>
+    <string name="open_fragment_ab_button">FragmentAB</string>
+    <string name="button_return_color">Send Color</string>
+    <string name="button_open_fragment_bb">Open Fragment BB</string>
 </resources>
