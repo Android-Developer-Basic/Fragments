@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
@@ -14,13 +15,20 @@ class FragmentA : Fragment(R.layout.fragment_a) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<AppCompatButton>(R.id.button_open_fragment_aa)?.setOnClickListener {
-            childFragmentManager
-                .beginTransaction()
-                .replace(R.id.fragment_frame_a, FragmentAA(ColorGenerator.generateColor()))
-                .addToBackStack(null)
-                .commit()
-            Log.d("app", "clicked button to open fragment_aa")
+        val button = view.findViewById<AppCompatButton>(R.id.button_open_fragment_aa)
+
+        Toast.makeText(this@FragmentA.context, "FragmentA", Toast.LENGTH_SHORT).show()
+
+        button?.apply {
+            setOnClickListener {
+                childFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_frame_a, FragmentAA.create(ColorGenerator.generateColor()))
+                    .addToBackStack("FragmentAA")
+                    .commit()
+                Log.d("app", "clicked button to open fragment_aa")
+                // visibility = View.GONE
+            }
         }
     }
 
@@ -29,7 +37,12 @@ class FragmentA : Fragment(R.layout.fragment_a) {
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (childFragmentManager.backStackEntryCount > 0) {
+                val index = childFragmentManager.backStackEntryCount
+                if (index > 0) {
+                    /*val tag = childFragmentManager.getBackStackEntryAt(index)
+                    if (tag.name.equals("FragmentAA")) {
+                        view?.findViewById<AppCompatButton>(R.id.button_open_fragment_aa)?.visibility = View.VISIBLE
+                    }*/
                     childFragmentManager.popBackStack()
                 }
                 else {

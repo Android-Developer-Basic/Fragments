@@ -10,10 +10,12 @@ class ActivityA : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
 
+        Log.d("app", "ActivityA")
+
         if(savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .add(R.id.activity_a_main_frame, FragmentA())
+                .replace(R.id.activity_a_main_frame, FragmentA())
                 .commit()
             Log.d("app", "fragment_a on view")
         }
