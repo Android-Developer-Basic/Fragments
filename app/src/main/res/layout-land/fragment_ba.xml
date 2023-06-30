@@ -3,14 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_ba_main_frame"
+    android:orientation="horizontal">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_send_color"
+        android:id="@+id/button_open_fragment_bb"
         style="?android:attr/segmentedButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:visibility="gone"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_gravity="center"
@@ -19,6 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/button_text_send_color" />
+        android:text="@string/button_text_fragment_bb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
