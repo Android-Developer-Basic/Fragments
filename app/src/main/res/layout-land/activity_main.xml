@@ -4,28 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:ignore="ExtraText">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/task_one_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1"/>
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/task_two_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1"
-            />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/task_one_container"
+        android:layout_width="0dp"
+        android:layout_height="@id/btn_layout"
+        app:layout_constraintBottom_toTopOf="@id/btn_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/task_two_container"
+        android:layout_width="0dp"
+        android:layout_height="@id/btn_layout"
+        app:layout_constraintBottom_toTopOf="@id/btn_layout"
+        app:layout_constraintEnd_toStartOf="@id/task_two_container_second"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.fragment.app.FragmentContainerView>>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/task_two_container_second"
+        android:layout_width="0dp"
+        android:layout_height="@id/btn_layout"
+        app:layout_constraintBottom_toTopOf="@id/btn_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/task_two_container"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.fragment.app.FragmentContainerView>>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,6 +73,5 @@
             app:layout_constraintStart_toEndOf="@+id/b_open_task_a"
             app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
