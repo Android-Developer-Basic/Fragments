@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="open_frag_button">Open %s</string>
+    <string name="frag_name">%s</string>
 </resources>
