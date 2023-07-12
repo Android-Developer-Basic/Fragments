@@ -9,24 +9,6 @@ import otus.gpb.homework.fragments.R
 
 class FragmentAB : Fragment(R.layout.fragment_layout) {
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        val view = inflater.inflate(
-//            R.layout.fragment_layout,
-//            container,
-//            false)
-//
-//        view.findViewById<Button>(R.id.frag_open_button).visibility = View.GONE
-//
-//        val receivedColor = requireArguments().getInt(ARG_COLOR, 0)
-//        view.setBackgroundColor(receivedColor)
-//
-//        return view
-//    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
