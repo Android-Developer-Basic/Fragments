@@ -35,6 +35,8 @@ class FragmentBA : Fragment(R.layout.fragment_layout) {
                 setOnClickListener {
                     val bundle = bundleOf(FragmentBB.ARG_COLOR to buttonColor)
                     findNavController().navigate(R.id.action_fragment_ba_to_fragment_bb, bundle)
+                    // Сгенерилось
+                    FragmentBADirections.actionFragmentBaToFragmentBb()
                 }
             }
         } else {
