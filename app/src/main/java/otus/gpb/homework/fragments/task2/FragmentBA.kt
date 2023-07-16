@@ -13,6 +13,8 @@ import otus.gpb.homework.fragments.R
 
 class FragmentBA : Fragment(R.layout.fragment_layout) {
 
+    private var color: Int = 0xFFFFFF
+
     private lateinit var hostInterActor: HostInterActor
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -21,6 +23,12 @@ class FragmentBA : Fragment(R.layout.fragment_layout) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (null != savedInstanceState) {
+            color = savedInstanceState.getInt("color", color)
+        }
+        view.setBackgroundColor(color)
+
 
         view.findViewById<TextView>(R.id.frag_title).text = this::class.java.simpleName
 
@@ -42,9 +50,13 @@ class FragmentBA : Fragment(R.layout.fragment_layout) {
         }
 
         parentFragmentManager.setFragmentResultListener(ARG_RESULT_KEY, this)  { _, bundle ->
-            val color = bundle.getInt(RESULT_VALUE)
+            color = bundle.getInt(RESULT_VALUE)
             view.setBackgroundColor(color)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("color", color)
     }
 
     companion object {
