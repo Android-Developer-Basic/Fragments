@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import otus.gpb.homework.fragments.ColorGenerator
@@ -29,7 +28,6 @@ class FragmentBA : Fragment(R.layout.fragment_layout) {
         }
         view.setBackgroundColor(color)
 
-
         view.findViewById<TextView>(R.id.frag_title).text = this::class.java.simpleName
 
         val button = view.findViewById<Button>(R.id.frag_open_button)
@@ -41,8 +39,11 @@ class FragmentBA : Fragment(R.layout.fragment_layout) {
                 text = context.getString(R.string.open_frag_button, "Fragment BB")
 
                 setOnClickListener {
-                    val bundle = bundleOf(FragmentBB.ARG_COLOR to buttonColor)
-                    findNavController().navigate(R.id.action_fragment_ba_to_fragment_bb, bundle)
+//                    val bundle = bundleOf(FragmentBB.ARG_COLOR to buttonColor)
+//                    findNavController().navigate(R.id.action_fragment_ba_to_fragment_bb, bundle)
+
+                    val action = FragmentBADirections.actionFragmentBaToFragmentBb(buttonColor)
+                    findNavController().navigate(action)
                 }
             }
         } else {

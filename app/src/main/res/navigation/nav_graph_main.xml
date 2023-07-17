@@ -23,10 +23,10 @@
         android:id="@+id/fragment_bb"
         android:name="otus.gpb.homework.fragments.task2.FragmentBB"
         tools:layout="@layout/fragment_layout">
-<!--        <argument-->
-<!--            android:name="colorArg"-->
-<!--            android:defaultValue="1"-->
-<!--            app:argType="integer"/>-->
+        <argument
+            android:name="colorArg"
+            android:defaultValue="0xFFFFFF"
+            app:argType="integer"/>
     </fragment>
 
 </navigation>
