@@ -22,7 +22,7 @@ class FragmentAB : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.getInt("color")?.let { color ->
+        arguments?.getInt("Color")?.let { color ->
             view.setBackgroundColor(color)
         }
     }

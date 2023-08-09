@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentAA">
+    tools:context=".FragmentBA">
 
     <Space
         android:layout_width="wrap_content"
@@ -16,16 +16,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Fragment AA"
+        android:text="Fragment BA"
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonFragmentAB"
+        android:id="@+id/buttonFragmentBB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Fragment AB"
+        android:hint="Fragment BB"
         tools:textColorHint="@color/white" />
 
     <Space

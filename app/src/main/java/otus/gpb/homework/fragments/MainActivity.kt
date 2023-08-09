@@ -14,29 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val onBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
-            override fun handleOnBackPressed() {
-                if (supportFragmentManager.backStackEntryCount == 1)
-                    binding.buttonFragmentA.visibility = View.VISIBLE
-                // проверка на наличие фрагментов в BackStack
-                if (supportFragmentManager.backStackEntryCount > 0) {
-                    // Удаление последнего фрагмента из стека
-                    supportFragmentManager.popBackStackImmediate()
-                } else {
-
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
-                }
-            }
-        }
-        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-
         binding.buttonFragmentA.setOnClickListener {
-            it.visibility = View.GONE
-            supportFragmentManager.beginTransaction()
-                .replace(binding.fragmentContainer.id, FragmentA())
-                .addToBackStack(null)
-                .commit()
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container, FragmentA().apply {
+                    arguments = Bundle().apply { putInt("Color", ColorGenerator.generateColor()) }
+                })
+                addToBackStack(null)
+            }.commit()
         }
     }
 }

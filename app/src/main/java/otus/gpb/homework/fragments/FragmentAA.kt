@@ -25,20 +25,15 @@ class FragmentAA : Fragment() {
             view.setBackgroundColor(color)
         }
 
-        binding.apply {
-            buttonFragmentAB.setOnClickListener {
-                val color = ColorGenerator.generateColor()
-
-                parentFragmentManager.beginTransaction().apply {
-                    replace((host as FragmentA).binding.fragmentContainer.id, FragmentAB().apply {
-                        arguments = Bundle().apply {
-                            putInt("Color", color)
-                        }
-                    })
-                    addToBackStack(null)
-                }.commit()
-            }
+        binding.buttonFragmentAB.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container_a, FragmentAB().apply {
+                    arguments = Bundle().apply {
+                        putInt("Color", ColorGenerator.generateColor())
+                    }
+                })
+                addToBackStack(null)
+            }.commit()
         }
     }
-
 }

@@ -29,12 +29,10 @@ class FragmentA : Fragment() {
                     childFragmentManager.apply {
                         when {
                             backStackEntryCount > 0 -> popBackStackImmediate()
-                            backStackEntryCount == 1 -> binding.buttonFragmentAA.visibility =
-                                View.VISIBLE
-
+                            backStackEntryCount == 1 -> binding.buttonFragmentAA.isEnabled = true//при нажатии на точку, где находится кнопка в A, прыгаем в новый АА
                             else -> {
                                 isEnabled = false
-                                requireActivity().onBackPressedDispatcher.onBackPressed()
+                                (host as MainActivity).onBackPressedDispatcher.onBackPressed()
                             }
                         }
                     }
@@ -42,17 +40,20 @@ class FragmentA : Fragment() {
             }
         )
 
+        arguments?.getInt("Color")?.let { color ->
+            view.setBackgroundColor(color)
+        }
+
         binding.apply {
             buttonFragmentAA.setOnClickListener { button ->
-                button.visibility = View.INVISIBLE
-                val color = ColorGenerator.generateColor()
-
+                button.isEnabled = false
                 childFragmentManager.beginTransaction().apply {
-                    replace(fragmentContainer.id, FragmentAA().apply {
-                        arguments = Bundle().apply { putInt("Color", color) }
+                    replace(R.id.fragment_container_a, FragmentAA().apply {
+                        arguments = Bundle().apply { putInt("Color", ColorGenerator.generateColor()) }
                     })
                     addToBackStack(null)
-                }.commit()
+                    commit()
+                }
             }
         }
     }
