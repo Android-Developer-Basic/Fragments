@@ -28,8 +28,11 @@ class FragmentA : Fragment() {
                 override fun handleOnBackPressed() {
                     childFragmentManager.apply {
                         when {
-                            backStackEntryCount > 0 -> popBackStackImmediate()
-                            backStackEntryCount == 1 -> binding.buttonFragmentAA.isEnabled = true//при нажатии на точку, где находится кнопка в A, прыгаем в новый АА
+                            backStackEntryCount > 0 -> {
+                                if(backStackEntryCount == 1)
+                                    binding.buttonFragmentAA.isEnabled = true
+                                popBackStackImmediate()
+                            }
                             else -> {
                                 isEnabled = false
                                 (host as MainActivity).onBackPressedDispatcher.onBackPressed()
