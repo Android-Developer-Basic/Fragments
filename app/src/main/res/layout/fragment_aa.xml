@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_background"
+    tools:context=".AAFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_ab_button"
+        style="@style/Button"
+        android:text="@string/fragment_ab_button"
+        android:layout_gravity="center"
+        tools:ignore="TextContrastCheck" />
+
+</FrameLayout>
