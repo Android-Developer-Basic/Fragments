@@ -13,23 +13,17 @@ class ActivityB : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_b)
-        findViewById<View>(R.id.fragmentContainerB)?.apply {
-            supportFragmentManager
+        findViewById<View>(R.id.fragmentContainerB)
+            ?.apply {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(id, FragmentBa(), FragmentBa::class.java.simpleName)
+                    .commit()
+            }
+            ?: supportFragmentManager
                 .beginTransaction()
-                .replace(id, FragmentBa(), FragmentBa::class.java.simpleName)
+                .replace(R.id.fragmentContainerBa, FragmentBa(), FragmentBa::class.java.simpleName)
+                .replace(R.id.fragmentContainerBb, FragmentBb(), FragmentBb::class.java.simpleName)
                 .commit()
-        }
-        findViewById<View>(R.id.fragmentContainerBa)?.apply {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(id, FragmentBa(), FragmentBa::class.java.simpleName)
-                .commit()
-        }
-        findViewById<View>(R.id.fragmentContainerBb)?.apply {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(id, FragmentBb(), FragmentBb::class.java.simpleName)
-                .commit()
-        }
     }
 }
