@@ -18,8 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/activityBGuideline"
-        android:name="otus.gpb.homework.fragments.FragmentBa"/>
+        app:layout_constraintEnd_toStartOf="@+id/activityBGuideline"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerBb"
@@ -28,7 +27,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activityBGuideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:name="otus.gpb.homework.fragments.FragmentBb"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
