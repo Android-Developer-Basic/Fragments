@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/work2_navigation"
+    app:startDestination="@id/fragmentBa">
+
+    <fragment
+        android:id="@+id/fragmentBa"
+        android:name="otus.gpb.homework.fragments.FragmentBa"
+        android:label="fragment_ba"
+        tools:layout="@layout/fragment_ba" >
+        <action android:id="@+id/action_to_fragment_bb"
+            app:destination="@id/fragmentBb"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentBb"
+        android:name="otus.gpb.homework.fragments.FragmentBb"
+        android:label="fragment_bb"
+        tools:layout="@layout/fragment_bb" >
+        <action android:id="@+id/action_send_color"
+            app:destination="@id/fragmentBa"/>
+    </fragment>
+</navigation>
