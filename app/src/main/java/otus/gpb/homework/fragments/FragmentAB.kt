@@ -7,35 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import otus.gpb.homework.fragments.databinding.FragmentAABinding
+import otus.gpb.homework.fragments.databinding.FragmentABBinding
 
-class FragmentAA : Fragment(R.layout.fragment_a_a) {
+class FragmentAB : Fragment(R.layout.fragment_a_b) {
     // TODO: Rename and change types of parameters
     private var paramColor: Int = Color.WHITE
 
-    private lateinit var binding: FragmentAABinding
+    private lateinit var binding: FragmentABBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             paramColor = it.getInt(ColorGenerator.ARG_COLOR)
         }
-        binding = FragmentAABinding.inflate(layoutInflater)
+        binding = FragmentABBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAABinding.inflate(inflater, container, false)
+        binding = FragmentABBinding.inflate(inflater, container, false)
 
-        binding.frameLayoutFragmentAA.setBackgroundColor(paramColor)
-        binding.buttonOpenFragmentAB.setOnClickListener {
-            val fragmentAB = FragmentAB.newInstance(ColorGenerator.generateColor())
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_a, fragmentAB)
-                .addToBackStack(null)
-                .commit()
-        }
+        binding.frameLayoutFragmentAB.setBackgroundColor(paramColor)
 
         return binding.root
     }
@@ -44,10 +38,11 @@ class FragmentAA : Fragment(R.layout.fragment_a_a) {
 
         @JvmStatic
         fun newInstance(paramColor: Int) =
-            FragmentAA().apply {
+            FragmentAB().apply {
                 arguments = Bundle().apply {
                     putInt(ColorGenerator.ARG_COLOR, paramColor)
                 }
             }
     }
+
 }
