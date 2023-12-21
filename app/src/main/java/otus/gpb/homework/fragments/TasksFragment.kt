@@ -22,7 +22,14 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
     ): View? {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
 
-        binding.buttonOpenTask1.setOnClickListener {  }
+        binding.buttonOpenTask1.setOnClickListener {
+            val fragmentA = FragmentA()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, fragmentA)
+                .addToBackStack(null)
+                .commit()
+        }
+
         binding.buttonOpenTask2.setOnClickListener {  }
 
         return binding.root
