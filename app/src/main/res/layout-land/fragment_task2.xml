@@ -10,6 +10,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentLeftContainerViewTask2"
+        android:name="otus.gpb.homework.fragments.FragmentBA"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +27,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentRightContainerViewTask2"
+        android:name="otus.gpb.homework.fragments.FragmentBB"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

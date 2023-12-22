@@ -67,7 +67,6 @@ class FragmentBA : Fragment(R.layout.fragment_b_a), UpdateLayout {
     }
 
     override fun updateBackgroundColor(color: Int) {
-        Log.d("Test", "updateBackgroundColor $color")
         binding.frameLayoutFragmentBA.setBackgroundColor(color)
     }
 }
