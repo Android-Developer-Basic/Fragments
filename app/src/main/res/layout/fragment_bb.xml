@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentBb">
+
+    <TextView
+        android:id="@+id/fragmentBbTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_bb"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentBbGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/mainGuideline"
+        android:id="@+id/fragmentBbGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/openActivityAButton"
+        android:id="@+id/sendColorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_activity_a"
-        app:layout_constraintBottom_toTopOf="@+id/mainGuideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"/>
-
-    <Button
-        android:id="@+id/openActivityBButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_activity_b"
-        app:layout_constraintTop_toBottomOf="@+id/mainGuideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/send_color"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentBbGuideline"
         app:layout_constraintVertical_bias="0.0"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
