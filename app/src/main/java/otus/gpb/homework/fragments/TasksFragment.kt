@@ -30,7 +30,13 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
                 .commit()
         }
 
-        binding.buttonOpenTask2.setOnClickListener {  }
+        binding.buttonOpenTask2.setOnClickListener {
+            val fragmentTask2 = Task2Fragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, fragmentTask2)
+                .addToBackStack(null)
+                .commit()
+        }
 
         return binding.root
     }
