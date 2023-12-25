@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="FragmentA">Fragment A</string>
+    <string name="FragmentAA">Fragment A A</string>
+    <string name="FragmentAB">Fragment A B</string>
+    <string name="FragmentBA">Fragment B A</string>
+    <string name="FragmentBB">Fragment B B</string>
+    <string name="openFragmentBB">Open Fragment B B</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
