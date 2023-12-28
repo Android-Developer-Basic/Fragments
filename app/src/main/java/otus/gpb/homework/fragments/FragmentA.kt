@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 
 open class FragmentA : Fragment() {
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
