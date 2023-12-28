@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 
 open class FragmentA : Fragment() {
@@ -41,6 +42,7 @@ open class FragmentA : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.findViewById<TextView>(R.id.text_a).setTextColor(ColorGenerator.generateColor())
         view.findViewById<Button>(R.id.btn_openAA).setOnClickListener {
             childFragmentManager
                 .beginTransaction()

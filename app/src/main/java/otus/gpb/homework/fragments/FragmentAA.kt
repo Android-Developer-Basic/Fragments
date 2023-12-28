@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 
@@ -41,8 +42,8 @@ class FragmentAA : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val random_color = ColorGenerator.generateColor()
-        view.setBackgroundColor(random_color)
+        view.findViewById<TextView>(R.id.text_aa).setTextColor(ColorGenerator.generateColor())
+        view.setBackgroundColor(ColorGenerator.generateColor())
         view.findViewById<Button>(R.id.btn_openAB).setOnClickListener {
             parentFragmentManager
                 .beginTransaction()
