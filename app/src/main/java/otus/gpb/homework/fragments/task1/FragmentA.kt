@@ -1,13 +1,13 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.task1
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.R
 
 class FragmentA : Fragment() {
 
@@ -38,7 +38,8 @@ class FragmentA : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fragment = FragmentButtonToActivity.InctanceFromFragment()//FragmentButtonToFragment.Inctance()
+        val fragment =
+            FragmentButtonToActivity.InctanceFromFragment()//FragmentButtonToFragment.Inctance()
         if(savedInstanceState==null) {
             childFragmentManager.beginTransaction()
                 .replace(R.id.childContainer, fragment)

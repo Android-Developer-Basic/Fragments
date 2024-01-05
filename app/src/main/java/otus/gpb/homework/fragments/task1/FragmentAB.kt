@@ -1,11 +1,11 @@
-package otus.gpb.homework.fragments
+package otus.gpb.homework.fragments.task1
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.R
 
 
 class FragmentAB : Fragment(){
@@ -41,7 +41,7 @@ class FragmentAB : Fragment(){
     companion object{
         private val UNKNOWN_COLOR = 0
         private val COLOR_BACKGROUND_KEY = "colorBackground"
-        fun fragmentABInstance(colorBackground: Int): FragmentAB{
+        fun fragmentABInstance(colorBackground: Int): FragmentAB {
             return FragmentAB().apply {
                 arguments = Bundle().apply {
                     putInt(COLOR_BACKGROUND_KEY, colorBackground)
