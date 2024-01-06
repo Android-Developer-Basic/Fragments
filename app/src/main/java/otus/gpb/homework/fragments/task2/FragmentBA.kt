@@ -47,8 +47,6 @@ class FragmentBA : Fragment(){
         )
 
 
-
-
         val openBB = view.findViewById<Button>(R.id.openBA)
         if(buttonGone){
             openBB.visibility = View.GONE

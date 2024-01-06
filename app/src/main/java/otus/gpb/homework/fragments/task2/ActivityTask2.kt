@@ -13,11 +13,11 @@ class ActivityTask2 : AppCompatActivity() {
     private var fragmentContainerRight: FragmentContainerView? = null
     private val callback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            if (supportFragmentManager.backStackEntryCount > 0) {
+            if (supportFragmentManager.backStackEntryCount >1) {
                 supportFragmentManager.popBackStack()
             } else {
                 isEnabled = false
-                onBackPressed()
+                finish()//onBackPressed()
             }
         }
 
@@ -27,6 +27,7 @@ class ActivityTask2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_2)
+        Log.e("Actaaaaa", supportFragmentManager.backStackEntryCount.toString())
 
         color = savedInstanceState?.getInt("color") ?:0
         Log.e("onCreateColor", color.toString())
@@ -40,7 +41,7 @@ class ActivityTask2 : AppCompatActivity() {
 
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerLeft, fragmentBA)
-                .addToBackStack("addFragmentBA")
+                 .addToBackStack(null)
                 .commit()
             listenerFragmentBA()
         } else {
@@ -48,6 +49,7 @@ class ActivityTask2 : AppCompatActivity() {
             val fragmentBB = FragmentBB.newInstanceActivity()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerLeft, fragmentBA)
+                .addToBackStack(null)
                 .replace(R.id.fragmentContainerRight, fragmentBB)
                 .commit()
             listenerFragmentBA()
