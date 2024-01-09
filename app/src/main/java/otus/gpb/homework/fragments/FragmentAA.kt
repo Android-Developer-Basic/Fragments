@@ -13,7 +13,7 @@ class FragmentAA: Fragment(R.layout.fragment_aa) {
         arguments?.let { view.setBackgroundColor(it.getInt(COLOR)) }
         val buttonOpenFragmentAB = view.findViewById<Button>(R.id.buttonOpenFragmentAB)
         buttonOpenFragmentAB.setOnClickListener {
-            childFragmentManager
+            parentFragmentManager
                 .beginTransaction()
                 .replace(R.id.container_ab, FragmentAB.withArgs(ColorGenerator.generateColor()))
                 .addToBackStack(null)
