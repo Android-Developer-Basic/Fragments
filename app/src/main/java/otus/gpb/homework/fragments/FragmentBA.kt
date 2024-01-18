@@ -24,8 +24,7 @@ class FragmentBA : Fragment() {
             REQUEST_KEY,
             this
         ) { _, result ->
-            view.findViewById<View>(R.id.fragment_ba_layout)
-                .setBackgroundColor(result.getInt(COLOR))
+            view.findViewById<View>(R.id.fragment_ba_layout).setBackgroundColor(result.getInt(COLOR))
         }
 
         view.findViewById<Button>(R.id.start_fragment_bb_btn)?.setOnClickListener {
