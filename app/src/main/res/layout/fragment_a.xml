@@ -4,26 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FragmentA">
 
     <Button
-        android:id="@+id/start_task1_btn"
+        android:id="@+id/start_fragment_aa_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start task 1"
+        android:text="Start fragment AA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/start_task2_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start task 2"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_a_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_task1_btn" />
+        app:layout_constraintTop_toBottomOf="@id/start_fragment_aa_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
