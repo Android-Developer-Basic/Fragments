@@ -48,8 +48,7 @@ class FragmentAB : Fragment() {
         super.onAttach(context)
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                val count1 = parentFragmentManager.backStackEntryCount
-                val count2 = childFragmentManager.backStackEntryCount
+
                 if (parentFragmentManager.backStackEntryCount > 0) {
                     parentFragmentManager.popBackStack()
                 }

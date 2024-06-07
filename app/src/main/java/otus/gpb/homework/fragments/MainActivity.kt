@@ -1,7 +1,9 @@
 package otus.gpb.homework.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         buttonOpenA.setOnClickListener{
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, FragmentA())
+                .add(R.id.fragment_container, FragmentA())
+                .addToBackStack("My")
                 .commit()
             buttonOpenA.visibility = View.GONE
             buttonOpen2.visibility = View.GONE
@@ -30,14 +33,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Task2::class.java)
             startActivity(intent)
         }
-    }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val count = supportFragmentManager.backStackEntryCount
-        if (count == 0) {
-            buttonOpenA.visibility = View.VISIBLE
-            buttonOpen2.visibility = View.VISIBLE
+        supportFragmentManager.addOnBackStackChangedListener {
+            val count = supportFragmentManager.backStackEntryCount
+            if (count == 0) {
+                buttonOpenA.visibility = View.VISIBLE
+                buttonOpen2.visibility = View.VISIBLE
+            }
         }
     }
+
 }

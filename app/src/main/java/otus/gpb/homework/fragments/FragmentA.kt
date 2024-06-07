@@ -23,7 +23,7 @@ class FragmentA : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private lateinit var buttonOpenFragmentAA: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -42,11 +42,11 @@ class FragmentA : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val  buttonOpenFragmentAA: Button = view.findViewById(R.id.buttonOpenFragmentAA)
+        buttonOpenFragmentAA = view.findViewById(R.id.buttonOpenFragmentAA)
         buttonOpenFragmentAA.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentAA.withArgs(ColorGenerator.generateColor()))
-                .addToBackStack(null)
+            childFragmentManager.beginTransaction()
+                .replace(R.id.container_aa, FragmentAA.withArgs(ColorGenerator.generateColor()))
+                .addToBackStack("fragmentA")
                 .commit()
             buttonOpenFragmentAA.visibility = View.GONE
         }
@@ -56,15 +56,22 @@ class FragmentA : Fragment() {
         super.onAttach(context)
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (parentFragmentManager.backStackEntryCount > 0) {
-                    parentFragmentManager.popBackStack()
+                if (childFragmentManager.backStackEntryCount > 0) {
+                    childFragmentManager.popBackStack()
                 } else {
+
                     isEnabled = true
-                    parentFragmentManager.beginTransaction().remove(this@FragmentA).commitAllowingStateLoss()
+                    requireActivity().supportFragmentManager.popBackStack()
                 }
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+
+        childFragmentManager.addOnBackStackChangedListener {
+            if(childFragmentManager.backStackEntryCount == 0) {
+                buttonOpenFragmentAA.visibility = View.VISIBLE
+            }
+        }
     }
 
     companion object {

@@ -50,7 +50,7 @@ class FragmentAA : Fragment() {
         buttonOpenFragmentAB.setOnClickListener {
             parentFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, FragmentAB.withArgs(ColorGenerator.generateColor()))
+                .replace(R.id.container_aa, FragmentAB.withArgs(ColorGenerator.generateColor()))
                 .addToBackStack(null)
                 .commit()
             buttonOpenFragmentAB.visibility = View.GONE
