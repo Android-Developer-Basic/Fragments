@@ -18,6 +18,7 @@ class FragmentBA : Fragment() {
 
         parentFragmentManager.setFragmentResultListener("colorKey", this) { key, bundle ->
             val color = bundle.getInt("color")
+            view.setBackgroundColor(color)
         }
     }
 }

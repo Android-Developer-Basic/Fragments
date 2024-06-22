@@ -7,43 +7,26 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity2 : AppCompatActivity() {
 
+    private lateinit var BAFragment: FragmentBA
+    private lateinit var BBFragment: FragmentBB
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (supportFragmentManager.backStackEntryCount > 1) {
-                    supportFragmentManager.popBackStack()
-                } else {
-                    finish()
-                }
-            }
+        if (savedInstanceState == null) {
+            BAFragment = FragmentBA()
+            BBFragment = FragmentBB()
+
         }
-
-        onBackPressedDispatcher.addCallback(this, callback)
-    }
-
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 1) {
-            supportFragmentManager.popBackStack()
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-    fun onClickOpenFrA(view: View) {
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setReorderingAllowed(true)
-        transaction.replace(R.id.A_container, FragmentA())
+        transaction.replace(R.id.BAcontainer, FragmentBA())
+        transaction.replace(R.id.BB_container, FragmentBB())
         transaction.addToBackStack(null)
         transaction.commit()
 
-        findViewById<View>(R.id.textView1).visibility = View.GONE
-        findViewById<View>(R.id.ToFragmentAbtn).visibility = View.GONE
 
     }
-
-
 }
