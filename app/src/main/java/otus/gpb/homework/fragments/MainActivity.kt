@@ -2,18 +2,37 @@ package otus.gpb.homework.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var fragmentA: FragmentA
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (supportFragmentManager.backStackEntryCount > 1) {
+                    supportFragmentManager.popBackStack()
+                } else {
+                    finish()
+                }
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, callback)
     }
 
-    fun clickFun(view: View) {
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 1) {
+            supportFragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    fun onClickOpenFrA(view: View) {
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setReorderingAllowed(true)
@@ -21,15 +40,9 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
 
-        findViewById<View>(R.id.textView).visibility = View.GONE
+        findViewById<View>(R.id.textView1).visibility = View.GONE
         findViewById<View>(R.id.ToFragmentAbtn).visibility = View.GONE
 
-
-//        fragmentA = FragmentA()
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.A_container, fragmentA)
-//            .addToBackStack(null) // Добавляем транзакцию в стек возврата
-//            .commit()
     }
 
 
