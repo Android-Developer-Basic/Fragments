@@ -3,6 +3,7 @@ package otus.gpb.homework.fragments
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,7 +12,7 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var BAFragment: FragmentBA
     private lateinit var BBFragment: FragmentBB
 
-    private var isTablet = false
+    private var isTablet = false // false - портрет, true - лендскейп
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +45,20 @@ class MainActivity2 : AppCompatActivity() {
             transaction.addToBackStack(null)
             transaction.commit()
 
+
         }
 
+    }
 
+    fun openFragmentBaOnClick(view: View){
 
-
-
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.setReorderingAllowed(true)
+        transaction.replace(R.id.FragmentContainer, FragmentBB())
+        transaction.addToBackStack(null)
+        transaction.commit()
+        findViewById<View>(R.id.textView).visibility = View.GONE
+        findViewById<View>(R.id.Open_FragmentBB_button).visibility = View.GONE
 
     }
 }
