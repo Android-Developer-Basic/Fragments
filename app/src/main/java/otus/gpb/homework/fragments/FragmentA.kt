@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 
 class FragmentA : Fragment() {
@@ -27,7 +28,19 @@ class FragmentA : Fragment() {
                 .commit()
 
 
+
+
         }
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (childFragmentManager.backStackEntryCount > 1) {
+                    childFragmentManager.popBackStack()
+                } else {
+                    requireActivity().finish()
+                }
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
 
         return view

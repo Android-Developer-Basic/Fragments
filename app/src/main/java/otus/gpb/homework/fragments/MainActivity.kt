@@ -11,26 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (supportFragmentManager.backStackEntryCount > 1) {
-                    supportFragmentManager.popBackStack()
-                } else {
-                    finish()
-                }
-            }
-        }
-
-        onBackPressedDispatcher.addCallback(this, callback)
     }
 
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 1) {
-            supportFragmentManager.popBackStack()
-        } else {
-            super.onBackPressed()
-        }
-    }
 
     fun onClickOpenFrA(view: View) {
 
