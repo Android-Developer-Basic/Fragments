@@ -5,4 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_aa">Fragment AA</string>
     <string name="fragment_ab">FRAGMENT AB</string>
+    <string name="task_2">TASK # 2</string>
+    <string name="send_color">SEND COLOR</string>
+    <string name="open_fragment_bb">OPEN FRAGMENT BB</string>
 </resources>
