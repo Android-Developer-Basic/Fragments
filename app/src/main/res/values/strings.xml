@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="to_aa">Перейти к фрагменту AA</string>
+    <string name="to_a">Перейти к фрагменту A</string>
+    <string name="to_ab">Перейти к Fragment AB</string>
+    <string name="second_task">Переход на активити второго задания</string>
+    <string name="open_fragment_bb">Open Fragment BB</string>
+    <string name="send_color">Send color</string>
 </resources>
