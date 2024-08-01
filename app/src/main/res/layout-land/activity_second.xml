@@ -10,21 +10,19 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_ba"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
         android:layout_width="0dp"
-        android:name="otus.gpb.homework.fragments.FragmentBA"
-        tools:parentLayout="@layout/fragment_ba"/>
-    
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
     <View
         android:layout_width="1dp"
         android:layout_height="wrap_content"
-        android:background="@color/black"/>
+        android:background="@color/black" />
 
     <FrameLayout
         android:id="@+id/fragment_bb"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
 </LinearLayout>

@@ -14,8 +14,8 @@ class FragmentBB : Fragment(R.layout.fragment_bb) {
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    val count = childFragmentManager.backStackEntryCount
-                    childFragmentManager.popBackStack()
+                    val count = parentFragmentManager.backStackEntryCount
+                    parentFragmentManager.popBackStack()
                     if (count == 0) {
                         requireActivity().finish()
                     }
@@ -26,12 +26,13 @@ class FragmentBB : Fragment(R.layout.fragment_bb) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val buttonFragmentBB = view.findViewById<Button>(R.id.buttonFragmentBB)
+        val buttonFragmentBB = view.findViewById<Button?>(R.id.button_send_color)
         buttonFragmentBB.setOnClickListener {
-            val color = ColorGenerator.generateColor()
             val bundle = Bundle()
-            bundle.putInt("color", color)
-            requireActivity().supportFragmentManager.setFragmentResult("requestKey", bundle)
+            bundle.putInt("color", ColorGenerator.generateColor())
+            requireActivity().supportFragmentManager
+                .setFragmentResult("requestKey", bundle)
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
 }

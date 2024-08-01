@@ -15,7 +15,7 @@ class ActivitySecond : AppCompatActivity() {
         val orientation = resources.configuration.orientation
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_ba, fragmentBA)
+                .replace(R.id.fragment_ba_portrait, fragmentBA)
                 .commit()
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             supportFragmentManager.beginTransaction()

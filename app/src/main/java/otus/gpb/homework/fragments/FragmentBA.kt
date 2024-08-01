@@ -9,6 +9,7 @@ class FragmentBA : Fragment(R.layout.fragment_ba) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         requireActivity().supportFragmentManager.setFragmentResultListener(
             "requestKey",
             this
@@ -16,11 +17,12 @@ class FragmentBA : Fragment(R.layout.fragment_ba) {
             val result = bundle.getInt("color")
             view.setBackgroundColor(result)
         }
+
         val buttonFragmentBB = view.findViewById<Button>(R.id.buttonFragmentBB)
-        buttonFragmentBB.setOnClickListener {
+        buttonFragmentBB?.setOnClickListener {
             val fragmentBB = FragmentBB()
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_bb, fragmentBB)
+                .replace(R.id.fragment_ba_portrait, fragmentBB)
                 .addToBackStack(null)
                 .commit()
         }
