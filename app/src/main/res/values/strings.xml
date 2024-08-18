@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="task_first">Task 1</string>
+    <string name="task_second">Task 2</string>
+    <string name="send_color">Send color</string>
+    <string name="fragment_a">FragmentA</string>
+    <string name="fragment_aa">FragmentAA</string>
+    <string name="fragment_ab">FragmentAB</string>
+    <string name="fragment_ba">FragmentBA</string>
+    <string name="fragment_bb">FragmentBB</string>
+    <string name="open_fragment_aa">Open Fragment AA</string>
+    <string name="open_fragment_ab">Open Fragment AB</string>
+    <string name="open_fragment_bb">Open Fragment BB</string>
 </resources>
