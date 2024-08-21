@@ -16,9 +16,14 @@ class FragmentBActivity : AppCompatActivity() {
 
         val orientation = resources.configuration.orientation
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            supportFragmentManager.beginTransaction().add(R.id.fragment_container_ba, fragmentBA)
-                .commit()
-            supportFragmentManager.beginTransaction().add(R.id.fragment_container_bb, fragmentBB)
+//            supportFragmentManager.beginTransaction().add(R.id.fragment_container_ba, fragmentBA)
+//                .commit()
+//            supportFragmentManager.beginTransaction().add(R.id.fragment_container_bb, fragmentBB)
+//                .commit()
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_ba, fragmentBA)
+                .replace(R.id.fragment_container_bb, fragmentBB)
                 .commit()
         }
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {

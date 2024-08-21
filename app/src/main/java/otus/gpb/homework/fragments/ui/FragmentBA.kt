@@ -24,13 +24,16 @@ class FragmentBA : Fragment(R.layout.fragment_b_a) {
         }
 
         val orientation = resources.configuration.orientation
+        val button = view.findViewById<Button>(R.id.buttonOpenFragmentBB)
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            val button = view.findViewById<Button>(R.id.buttonOpenFragmentBB)
+            button.visibility = View.VISIBLE
             button.text = "FragmentBB"
             button.setOnClickListener() {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.activity_fragment_b, FragmentBB()).addToBackStack(null).commit()
             }
+        } else {
+            button.visibility = View.GONE
         }
     }
 }
