@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/fragment_ba">
+
+    <fragment
+        android:id="@+id/fragment_ba"
+        android:name="otus.gpb.homework.fragments.task2.FragmentBA"
+        android:label="FragmentBA"
+        tools:layout="@layout/fragment_layout">
+        <action
+            android:id="@+id/action_fragment_ba_to_fragment_bb"
+            app:destination="@id/fragment_bb"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_bb"
+        android:name="otus.gpb.homework.fragments.task2.FragmentBB"
+        tools:layout="@layout/fragment_layout">
+        <argument
+            android:name="colorArg"
+            android:defaultValue="0xFFFFFF"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>
