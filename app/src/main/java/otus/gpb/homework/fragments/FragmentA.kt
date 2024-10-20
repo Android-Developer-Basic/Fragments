@@ -18,8 +18,9 @@ class FragmentA : Fragment() {
         val view = inflater.inflate(R.layout.fragment_a, container, false)
         val fragmentAaButton = view.findViewById<Button>(R.id.openFragmentAaButton)
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
-            object: OnBackPressedCallback(true) {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     if (childFragmentManager.backStackEntryCount > 0) {
                         childFragmentManager.popBackStack()
