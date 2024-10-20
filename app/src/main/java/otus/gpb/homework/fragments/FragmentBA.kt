@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import java.util.Objects
 
@@ -18,11 +17,6 @@ class FragmentBA : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_ba, container, false)
-
-        val textView = view.findViewById<TextView>(R.id.colorTextView)
-        parentFragmentManager.setFragmentResultListener("color", this) { _, bundle ->
-            textView.setBackgroundColor(bundle.getInt("color"))
-        }
 
         val openFragmentBbButton = view.findViewById<Button>(R.id.openFragmentBbButton)
         openFragmentBbButton.setOnClickListener {
