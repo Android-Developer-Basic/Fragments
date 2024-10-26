@@ -13,6 +13,10 @@ class FragmentAB : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_ab, container, false)
+        val view = inflater.inflate(R.layout.fragment_ab, container, false)
+
+        arguments?.getInt("color")?.let { view.setBackgroundColor(it) }
+
+        return view
     }
 }

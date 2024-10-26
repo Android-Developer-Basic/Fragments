@@ -25,7 +25,7 @@ class FragmentA : Fragment() {
                     if (childFragmentManager.backStackEntryCount > 0) {
                         childFragmentManager.popBackStack()
                     } else {
-                        requireActivity().onBackPressed()
+                        requireActivity().finish()
                     }
                 }
             }

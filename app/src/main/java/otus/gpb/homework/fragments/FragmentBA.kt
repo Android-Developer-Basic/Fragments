@@ -18,6 +18,10 @@ class FragmentBA : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_ba, container, false)
 
+        parentFragmentManager.setFragmentResultListener("color", this) { _, bundle ->
+            view.setBackgroundColor(bundle.getInt("color"))
+        }
+
         val openFragmentBbButton = view.findViewById<Button>(R.id.openFragmentBbButton)
         openFragmentBbButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
