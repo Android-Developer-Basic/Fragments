@@ -17,23 +17,29 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/openFragmentAButton"
+            android:id="@+id/homeworkPartOneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/frame_layout"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/purple_500"
-            android:text="@string/open_fragment_a"
+            android:text="@string/homework_part_one_button"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <FrameLayout
-            android:id="@+id/frame_layout"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/homeworkPartTwoButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" />
+            android:layout_below="@+id/homeworkPartOneButton"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/purple_500"
+            android:text="@string/homework_part_two_button"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
