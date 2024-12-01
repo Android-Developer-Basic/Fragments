@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Fragments</string>
+
+    <string name="hello_blank_fragment">Это Fragment AB</string>
+    <string name="open_fragment_aa">Открыть Fragment AA</string>
+    <string name="open_fragment_ab">Открыть Fragment AB</string>
+    <string name="open_fragment_a">Открыть Fragment A</string>
+    <string name="open_fragment_bb">Открыть Fragment BB</string>
+    <string name="send_color">Получить цвет</string>
+    <string name="task_2">Задание 2</string>
 </resources>
