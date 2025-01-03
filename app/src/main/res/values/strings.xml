@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="open_activity_a">Open Activity A</string>
+    <string name="open_activity_b">Open Activity B</string>
+    <string name="i_m_fragment_a">I\'m Fragment A</string>
+    <string name="open_fragment_aa">Open Fragment AA</string>
+    <string name="a_m_main_activity">A\'m Main Activity</string>
+    <string name="i_m_fragment_aa">I\'m Fragment AA</string>
+    <string name="open_fragment_ab">Open Fragment AB</string>
+    <string name="i_m_fragment_ab">I\'m Fragment AB</string>
+    <string name="i_m_fragment_ba">I\'m Fragment BA</string>
+    <string name="send_this_color_to_fragment_bb">Send This Color To Fragment BB</string>
+    <string name="i_m_fragment_bb">I\'m Fragment BB</string>
+    <string name="send_this_color_to_fragment_ba">Send This Color To Fragment BA</string>
+    <string name="i_m_fragment_main_activity_a">I\'m Fragment Main Activity A</string>
+    <string name="open_fragment_a">Open Fragment A</string>
 </resources>
