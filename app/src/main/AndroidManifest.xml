@@ -13,7 +13,14 @@
         android:theme="@style/Theme.Fragments"
         tools:targetApi="31">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FirstActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
