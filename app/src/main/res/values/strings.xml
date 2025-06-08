@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_fragment_aa">open fragment AA</string>
+    <string name="fragment_a">fragment  A</string>
+    <string name="fragment_aa">fragment    AA</string>
+    <string name="open_fragment_ab">open fragment AB</string>
+    <string name="open_fragment_bb">Onen Fragment_BB</string>
+    <string name="fragmentba">FragmentBA</string>
+    <string name="fragmentbb">FragmentBB</string>
+    <string name="send_color">Send Color</string>
+
 </resources>
