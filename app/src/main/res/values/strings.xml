@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="activity_a_button_text">Activity A</string>
+    <string name="activity_b_button_text">Activity B</string>
+    <string name="fragment_aa_button_text">To Fragment AA</string>
+    <string name="fragment_ab_button_text">To Fragment AB</string>
+    <string name="hello_blank_fragment_a">Hello Fragment A</string>
+    <string name="hello_blank_fragment_a_a">Hello Fragment AA</string>
+    <string name="hello_blank_fragment_a_b">Hello Fragment AB</string>
+    <string name="hello_blank_fragment_b_a">Fragment BA</string>
+    <string name="hello_blank_fragment_b_b">Fragment BB</string>
+    <string name="fragment_b_b_button_text">SendColor</string>
+    <string name="fragment_b_a_button_text">Open Fragment BB</string>
 </resources>
