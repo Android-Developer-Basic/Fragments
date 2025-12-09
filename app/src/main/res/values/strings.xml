@@ -7,4 +7,7 @@
     <string name="activity_1">Activity 1</string>
     <string name="fragment_aa">FRAGMENT AA</string>
     <string name="fragment_ab">FRAGMENT AB</string>
+    <string name="fragment_ba">FRAGMENT BA</string>
+    <string name="fragment_bb">FRAGMENT BB</string>
+    <string name="send_color">Send color</string>
 </resources>
