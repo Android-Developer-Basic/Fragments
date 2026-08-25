@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="main_title">Fragment API</string>
+    <string name="task_a_title">Задание 1</string>
+    <string name="task_b_title">Задание 2</string>
+    <string name="open_task_a">Открыть FragmentA</string>
+    <string name="open_task_b">Открыть FragmentB</string>
+    <string name="fragment_a_title">FragmentA</string>
+    <string name="fragment_aa_title">FragmentAA</string>
+    <string name="fragment_ab_title">FragmentAB</string>
+    <string name="fragment_ba_title">FragmentBA</string>
+    <string name="fragment_bb_title">FragmentBB</string>
+    <string name="open_fragment_aa">Открыть FragmentAA</string>
+    <string name="open_fragment_ab">Открыть FragmentAB</string>
+    <string name="open_fragment_bb">Открыть FragmentBB</string>
+    <string name="send_color">Отправить цвет</string>
 </resources>
